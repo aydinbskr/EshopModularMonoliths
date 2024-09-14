@@ -1,6 +1,3 @@
-using Catalog;
-using Basket;
-using Ordering;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +8,9 @@ builder.Services
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+app
+    .UseCatalogModule()
+    .UseBasketModule()
+    .UseOrderingModule();
 
 app.Run();
