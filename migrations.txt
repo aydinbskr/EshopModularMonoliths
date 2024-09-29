@@ -1,0 +1,5 @@
+Defaut project: Modules\Catalog\Catalog
+
+pm>Add-Migration Initial -OutputDir Data/Migrations -Project Catalog -StartupProject Api
+
+pm> Update-Database

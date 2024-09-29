@@ -3,7 +3,7 @@ namespace Catalog.Data
 {
     public class CatalogDbContext : DbContext
     {
-        protected CatalogDbContext(DbContextOptions<CatalogDbContext> options):base(options)
+        public CatalogDbContext(DbContextOptions<CatalogDbContext> options):base(options)
         {
         }
 
