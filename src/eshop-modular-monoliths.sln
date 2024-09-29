@@ -17,13 +17,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{C177
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{89CD1BBD-F1FD-4CF0-89A2-27A784A1D349}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog", "Modules\Catalog\Catalog\Catalog.csproj", "{E75E82FA-1F26-4DD2-9E0C-F428B59B76D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog", "Modules\Catalog\Catalog\Catalog.csproj", "{E75E82FA-1F26-4DD2-9E0C-F428B59B76D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket", "Modules\Basket\Basket\Basket.csproj", "{9A61F9A8-2874-4890-933A-33B730CF358A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket", "Modules\Basket\Basket\Basket.csproj", "{9A61F9A8-2874-4890-933A-33B730CF358A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering", "Modules\Ordering\Ordering\Ordering.csproj", "{FA395998-81D3-41CE-A03D-C904F88F5A95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering", "Modules\Ordering\Ordering\Ordering.csproj", "{FA395998-81D3-41CE-A03D-C904F88F5A95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared\Shared.csproj", "{45AD19E3-A698-4410-A760-FB0318641126}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared\Shared.csproj", "{45AD19E3-A698-4410-A760-FB0318641126}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D7E943BE-F75F-4446-BAAB-59A7BEF297A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{45AD19E3-A698-4410-A760-FB0318641126}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45AD19E3-A698-4410-A760-FB0318641126}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45AD19E3-A698-4410-A760-FB0318641126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7E943BE-F75F-4446-BAAB-59A7BEF297A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7E943BE-F75F-4446-BAAB-59A7BEF297A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7E943BE-F75F-4446-BAAB-59A7BEF297A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7E943BE-F75F-4446-BAAB-59A7BEF297A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
