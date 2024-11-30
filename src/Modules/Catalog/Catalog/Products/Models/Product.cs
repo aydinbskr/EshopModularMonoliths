@@ -27,7 +27,7 @@ namespace Catalog.Products.Models
             return product;
         }
 
-        public void Update(Guid id, string name, List<string> category, string description, string imageFile, decimal price)
+        public void Update(string name, List<string> category, string description, string imageFile, decimal price)
         {
             ArgumentException.ThrowIfNullOrEmpty(name);
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(price);
