@@ -36,7 +36,6 @@ namespace Catalog.Products.Models
             Category = category;
             Description = description;
             ImageFile = imageFile;
-            Price = price;
 
             if(Price != price)
             {

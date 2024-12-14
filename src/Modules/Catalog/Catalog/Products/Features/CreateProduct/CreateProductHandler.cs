@@ -4,7 +4,7 @@ namespace Catalog.Products.Features.CreateProduct
     public record CreateProductCommand(ProductDto product)
         :ICommand<CreateProductResult>;
     
-    public record CreateProductResult(Guid id);
+    public record CreateProductResult(Guid Id);
     public class CreateProductHandler(CatalogDbContext dbContext)
         : ICommandHandler<CreateProductCommand, CreateProductResult>
     {

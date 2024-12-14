@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Catalog.Products.Features.GetProductById
 {
-	public record GetProductByIdQuery(Guid id):IQuery<GetProductByIdResult>;
+	public record GetProductByIdQuery(Guid Id):IQuery<GetProductByIdResult>;
 
-	public record GetProductByIdResult(ProductDto product);
+	public record GetProductByIdResult(ProductDto Product);
 
 	public class GetProductByIdHandler(CatalogDbContext dbContext) : IQueryHandler<GetProductByIdQuery, GetProductByIdResult>
 	{
@@ -16,10 +16,10 @@ namespace Catalog.Products.Features.GetProductById
 		{
 			var product = await dbContext.Products
 								.AsNoTracking()
-								.SingleOrDefaultAsync(p => p.Id == request.id, cancellationToken);
+								.SingleOrDefaultAsync(p => p.Id == request.Id, cancellationToken);
 			if(product is null)
 			{
-				throw new Exception($"Product not found:{request.id}");
+				throw new Exception($"Product not found:{request.Id}");
 			}
 
 			var productDto = product.Adapt<ProductDto>();
