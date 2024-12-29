@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Catalog.Products.Features.GetProductById
 {
@@ -19,7 +20,7 @@ namespace Catalog.Products.Features.GetProductById
 								.SingleOrDefaultAsync(p => p.Id == request.Id, cancellationToken);
 			if(product is null)
 			{
-				throw new Exception($"Product not found:{request.Id}");
+				throw new ProductNotFoundException(request.Id);
 			}
 
 			var productDto = product.Adapt<ProductDto>();
