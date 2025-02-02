@@ -1,4 +1,6 @@
-﻿namespace Basket.Basket.Features.AddItemIntoBasket
+﻿using Basket.Data.Repository;
+
+namespace Basket.Basket.Features.AddItemIntoBasket
 {
 
 	public record AddItemIntoBasketCommand(string UserName, ShoppingCartItemDto ShoppingCartItem)
@@ -13,20 +15,21 @@
 			RuleFor(x => x.ShoppingCartItem.Quantity).GreaterThan(0).WithMessage("Quantity must be greater zero");
 		}
 	}
-	internal class AddItemIntoBasketHandler(BasketDbContext dbContext)
+	internal class AddItemIntoBasketHandler(IBasketRepository repository)
 		: ICommandHandler<AddItemIntoBasketCommand, AddItemIntoBasketResult>
 	{
 		public async Task<AddItemIntoBasketResult> Handle(AddItemIntoBasketCommand request, CancellationToken cancellationToken)
 		{
 
-			var shoppingCart = await dbContext.ShoppingCarts
-			.Include(x => x.Items)
-			.SingleOrDefaultAsync(x => x.UserName == request.UserName, cancellationToken);
+			//var shoppingCart = await dbContext.ShoppingCarts
+			//.Include(x => x.Items)
+			//.SingleOrDefaultAsync(x => x.UserName == request.UserName, cancellationToken);
 
-			if (shoppingCart is null)
-			{
-				throw new BasketNotFoundException(request.UserName);
-			}
+			//if (shoppingCart is null)
+			//{
+			//	throw new BasketNotFoundException(request.UserName);
+			//}
+			var shoppingCart = await repository.GetBasket(request.UserName, false, cancellationToken);
 
 			shoppingCart.AddItem(
 			request.ShoppingCartItem.ProductId,
@@ -35,7 +38,7 @@
 			request.ShoppingCartItem.Price,
 			request.ShoppingCartItem.ProductName);
 
-			await dbContext.SaveChangesAsync(cancellationToken);
+			await repository.SaveChangesAsync(request.UserName, cancellationToken);
 			return new AddItemIntoBasketResult(shoppingCart.Id);
 		}
 	}
