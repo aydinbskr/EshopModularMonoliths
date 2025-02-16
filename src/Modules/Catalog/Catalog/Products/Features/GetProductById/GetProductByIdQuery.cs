@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-
+﻿
 namespace Catalog.Products.Features.GetProductById
 {
-	public record GetProductByIdQuery(Guid Id):IQuery<GetProductByIdResult>;
+	//public record GetProductByIdQuery(Guid Id):IQuery<GetProductByIdResult>;
 
-	public record GetProductByIdResult(ProductDto Product);
+	//public record GetProductByIdResult(ProductDto Product);
 
 	public class GetProductByIdHandler(CatalogDbContext dbContext) : IQueryHandler<GetProductByIdQuery, GetProductByIdResult>
 	{

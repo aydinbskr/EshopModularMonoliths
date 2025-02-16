@@ -1,12 +1,7 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Logging;
-using Shared.CQRS;
-using System;
-using System.Collections.Generic;
+using Shared.Contracts.CQRS;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shared.Behaviours
 {
