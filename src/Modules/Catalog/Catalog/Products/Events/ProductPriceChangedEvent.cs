@@ -1,5 +1,5 @@
 ﻿
 namespace Catalog.Products.Events
 {
-    public record ProductPriceChengedEvent(Product product) : IDomainEvent;
+    public record ProductPriceChengedEvent(Product Product) : IDomainEvent;
 }
