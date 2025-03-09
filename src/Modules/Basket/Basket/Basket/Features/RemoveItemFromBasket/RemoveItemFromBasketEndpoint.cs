@@ -19,7 +19,8 @@ namespace Basket.Basket.Features.RemoveItemFromBasket
 				.Produces<RemoveItemFromBasketResponse>(StatusCodes.Status200OK)
 				.ProducesProblem(StatusCodes.Status400BadRequest)
 				.WithSummary("Remove Item From Basket")
-				.WithDescription("Remove Item From Basket");
+				.WithDescription("Remove Item From Basket")
+				.RequireAuthorization();
 		}
 	}
 }

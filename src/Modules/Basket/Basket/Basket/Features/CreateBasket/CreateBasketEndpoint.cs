@@ -1,4 +1,6 @@
 ﻿
+using System.Security.Claims;
+
 namespace Basket.Basket.Features.CreateBasket
 {
 
@@ -8,10 +10,13 @@ namespace Basket.Basket.Features.CreateBasket
 	{
 		public void AddRoutes(IEndpointRouteBuilder app)
 		{
-			app.MapPost("/basket", async (CreateBasketRequest request, ISender sender) =>
+			app.MapPost("/basket", async (CreateBasketRequest request, ISender sender, ClaimsPrincipal user) =>
 			{
+				var userName = user.Identity!.Name;
+				var updatingShoppingCart = request.ShoppingCart with { UserName = userName };
 
-				var command = request.Adapt<CreateBasketCommand>();
+				var command = new CreateBasketCommand(updatingShoppingCart);
+				//var command = request.Adapt<CreateBasketCommand>();
 				var result = await sender.Send(command);
 				var response = result.Adapt<CreateBasketResponse>();
 				return Results.Created($"/basket/{response.Id}", response);
@@ -19,7 +24,8 @@ namespace Basket.Basket.Features.CreateBasket
 			.Produces<CreateBasketResponse>(StatusCodes.Status201Created)
 			.ProducesProblem(StatusCodes.Status400BadRequest)
 			.WithSummary("Create Basket")
-			.WithDescription("Create Basket");
+			.WithDescription("Create Basket")
+			.RequireAuthorization();
 		}
 	}
 }
