@@ -10,10 +10,11 @@ builder.Host.UseSerilog((context, config) =>
 //common services: carter, mediatr, fluentvalidation
 var catalogAssembly = typeof(CatalogModule). Assembly; 
 var basketAssembly = typeof(BasketModule).Assembly;
+var orderAssembly = typeof(OrderingModule).Assembly;
 
-builder.Services.AddCarterWithAssemblies(catalogAssembly, basketAssembly);
+builder.Services.AddCarterWithAssemblies(catalogAssembly, basketAssembly,orderAssembly);
 
-builder.Services.AddMediatRWithAssemblies(catalogAssembly, basketAssembly);
+builder.Services.AddMediatRWithAssemblies(catalogAssembly, basketAssembly,orderAssembly);
 
 builder.Services.AddStackExchangeRedisCache(options =>
 {
