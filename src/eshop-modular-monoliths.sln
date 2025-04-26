@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Contracts", "Module
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Contracts", "Shared\Shared.Contracts\Shared.Contracts.csproj", "{1F10CA40-5710-4D3D-B3AD-2A48C0B65271}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Messaging", "Shared\Shared.Messaging\Shared.Messaging.csproj", "{45F091F4-A802-4516-BE36-44645A51D45B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Messaging", "Shared\Shared.Messaging\Shared.Messaging.csproj", "{45F091F4-A802-4516-BE36-44645A51D45B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shopping.Web", "Bootstrapper\Shopping.Web\Shopping.Web.csproj", "{EE29B0E7-9CB3-4EB7-9C84-F7E1D1DFEC93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{45F091F4-A802-4516-BE36-44645A51D45B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45F091F4-A802-4516-BE36-44645A51D45B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45F091F4-A802-4516-BE36-44645A51D45B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE29B0E7-9CB3-4EB7-9C84-F7E1D1DFEC93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE29B0E7-9CB3-4EB7-9C84-F7E1D1DFEC93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE29B0E7-9CB3-4EB7-9C84-F7E1D1DFEC93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE29B0E7-9CB3-4EB7-9C84-F7E1D1DFEC93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,6 +97,7 @@ Global
 		{85F1602F-56AA-4B5D-8757-753F8595479C} = {C177C65C-0511-43D8-BBB1-62229119545B}
 		{1F10CA40-5710-4D3D-B3AD-2A48C0B65271} = {7EDE0AAD-9FCF-4994-B5E7-BB48619AD76F}
 		{45F091F4-A802-4516-BE36-44645A51D45B} = {7EDE0AAD-9FCF-4994-B5E7-BB48619AD76F}
+		{EE29B0E7-9CB3-4EB7-9C84-F7E1D1DFEC93} = {0CBB40C4-8B00-490C-9CFF-B94A4E76465A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CE17EE0-CCEA-4236-8B8E-911C7373F5BD}
